@@ -20,3 +20,12 @@ El producto se encuentra en una etapa inicial de definición y validación. La p
 
 - `docs/`: documentación funcional, de datos y arquitectura del producto.
 - `demo/`: prototipo navegable de Viaggio.
+
+## Base para el MVP
+
+La definición ejecutable de la primera versión está en
+[`docs/PLAN_MVP_PRODUCCION.md`](docs/PLAN_MVP_PRODUCCION.md). Resume el
+alcance, arquitectura, datos, pantallas, permisos, seguridad y fases sin
+reemplazar la documentación exploratoria existente.
+
+Los supuestos iniciales se registran en [`SUPUESTOS.md`](SUPUESTOS.md).
