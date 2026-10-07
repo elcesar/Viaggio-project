@@ -267,6 +267,7 @@
     help.student='Consulta actividades, tareas, comunicados y recuerdos autorizados de su generación.';
     document.getElementById('role').insertAdjacentHTML('beforeend','<option value="student">Alumno</option>');
     access.student=['home','community','tasks','communications','calendar','gallery'];
+    ['admin','coord','parent','read','superadmin','schooladmin'].forEach(role=>access[role].push('gallery'));
     crumbs.gallery='Álbum del curso';
     operationConfig.photo={title:'Publicar foto en el álbum',description:'Agrega una imagen por enlace y decide si queda publicada para el curso o como borrador privado de la directiva.',fields:[['name','Descripción de la foto','Ej. Bingo solidario · Equipo de bienvenida','text'],['type','Enlace de imagen','Ej. https://...','url'],['goal','Visibilidad','Publicada para el curso|Borrador privado','select']]};
     const documentedTripOps=tripOps;
