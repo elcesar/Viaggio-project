@@ -28,4 +28,9 @@ La definición ejecutable de la primera versión está en
 alcance, arquitectura, datos, pantallas, permisos, seguridad y fases sin
 reemplazar la documentación exploratoria existente.
 
+El alcance comercial organizado para salir a ofrecer la V1.0 a colegios y
+agencias está en [`docs/ALCANCE_MVP_V1_0.md`](docs/ALCANCE_MVP_V1_0.md).
+Detalla los recorridos que deben operar, los límites de la primera versión y lo
+que se reserva para una fase de pagos o transacciones regulada.
+
 Los supuestos iniciales se registran en [`SUPUESTOS.md`](SUPUESTOS.md).
