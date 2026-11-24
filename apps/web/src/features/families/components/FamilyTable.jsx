@@ -1,0 +1,4 @@
+import { Users } from 'lucide-react';
+import { EmptyState } from '../../../shared/components/EmptyState';
+import { StatusBadge } from '../../../shared/components/StatusBadge';
+export function FamilyTable({ families }) { if (!families.length) return <EmptyState title="No hay familias cargadas" text="Importa una nómina ficticia para revisar la estructura." />; return <div className="family-table" role="table" aria-label="Familias de la gira"><div className="family-table__head" role="row"><span>Familia</span><span>Apoderado principal</span><span>Estudiante</span><span>Estado</span></div>{families.map((family) => <div className="family-table__row" role="row" key={family.id}><span><Users size={15} /> <b>{family.name}</b></span><span>{family.primaryGuardian}</span><span>{family.students.map((student) => student.name).join(', ')}</span><StatusBadge status={family.status} /></div>)}</div>; }
