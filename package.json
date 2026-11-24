@@ -1,0 +1,15 @@
+{
+  "name": "viaggio-project",
+  "private": true,
+  "packageManager": "pnpm@10.12.4",
+  "scripts": {
+    "dev": "pnpm --filter @viaggio/web dev",
+    "lint": "pnpm --filter @viaggio/web lint",
+    "test": "pnpm --filter @viaggio/web test",
+    "build": "pnpm --filter @viaggio/web build",
+    "test:e2e": "pnpm --filter @viaggio/web test:e2e"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.8"
+  }
+}

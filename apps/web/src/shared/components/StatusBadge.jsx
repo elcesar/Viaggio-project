@@ -1,0 +1,1 @@
+export function StatusBadge({ status }) { const normalized = String(status || 'Pendiente').toLowerCase(); return <span className={`status-badge status-badge--${normalized.replaceAll(' ', '-')}`}>{status || 'Pendiente'}</span>; }

@@ -1,0 +1,1 @@
+export function EmptyState({ title = 'Aún no hay información disponible', text = 'Vuelve a revisar más tarde.' }) { return <div className="empty-state"><strong>{title}</strong><span>{text}</span></div>; }

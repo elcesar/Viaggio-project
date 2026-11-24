@@ -1,0 +1,1 @@
+export function ErrorState({ onRetry }) { return <div className="state-panel state-panel--error" role="alert"><strong>No fue posible cargar tu información.</strong><button type="button" onClick={onRetry}>Reintentar</button></div>; }
