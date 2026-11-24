@@ -3,6 +3,7 @@ import { ParentDashboardPage } from '../features/dashboard';
 import { OrganizationPage } from '../features/organization/pages/OrganizationPage';
 import { FamiliesPage } from '../features/families/pages/FamiliesPage';
 import { FinancePage } from '../features/finance/pages/FinancePage';
+import { DocumentsPage } from '../features/documents/pages/DocumentsPage';
 import { AppLayout } from '../shared/layouts/AppLayout';
 import { MigrationPending } from '../shared/components/MigrationPending';
 
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
       { path: 'organization', element: <OrganizationPage /> },
       { path: 'families', element: <FamiliesPage /> },
       { path: 'finance', element: <FinancePage /> },
+      { path: 'documents', element: <DocumentsPage /> },
       ...pendingPages.map(([path, title]) => ({ path, element: <MigrationPending title={title} /> })),
     ],
   },
