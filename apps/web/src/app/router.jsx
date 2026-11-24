@@ -1,5 +1,7 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 import { ParentDashboardPage } from '../features/dashboard';
+import { OrganizationPage } from '../features/organization/pages/OrganizationPage';
+import { FamiliesPage } from '../features/families/pages/FamiliesPage';
 import { AppLayout } from '../shared/layouts/AppLayout';
 import { MigrationPending } from '../shared/components/MigrationPending';
 
@@ -13,6 +15,8 @@ export const router = createBrowserRouter([
   {
     path: '/app', element: <AppLayout />, children: [
       { path: 'dashboard', element: <ParentDashboardPage /> },
+      { path: 'organization', element: <OrganizationPage /> },
+      { path: 'families', element: <FamiliesPage /> },
       ...pendingPages.map(([path, title]) => ({ path, element: <MigrationPending title={title} /> })),
     ],
   },

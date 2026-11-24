@@ -1,0 +1,5 @@
+import { Building2, GraduationCap, MapPinned } from 'lucide-react';
+import { Card } from '../../../shared/components/Card';
+import { StatusBadge } from '../../../shared/components/StatusBadge';
+import { formatDate } from '../../../shared/utils/dates';
+export function ContextSummary({ organization }) { const { school, course, trip } = organization; return <div className="context-grid"><Card><p className="card-kicker"><Building2 size={15} /> Colegio</p><h2>{school.name}</h2><p className="context-copy">{school.city}</p><StatusBadge status={school.status} /></Card><Card><p className="card-kicker"><GraduationCap size={15} /> Curso</p><h2>{course.name} · Generación {course.generation}</h2><p className="context-copy">{course.studentCount} estudiantes · {course.guardianCount} apoderados</p></Card><Card><p className="card-kicker"><MapPinned size={15} /> Gira</p><h2>{trip.name}</h2><p className="context-copy">{trip.destination} · {formatDate(trip.estimatedDepartureDate)}</p><StatusBadge status={trip.status} /></Card></div>; }
