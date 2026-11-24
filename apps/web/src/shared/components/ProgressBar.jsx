@@ -1,0 +1,1 @@
+export function ProgressBar({ value }) { const safeValue = Math.min(100, Math.max(0, Number(value) || 0)); return <div className="progress-bar" role="progressbar" aria-label="Avance de financiamiento" aria-valuemin="0" aria-valuemax="100" aria-valuenow={safeValue}><span className={`progress-bar__fill progress-bar__fill--${safeValue}`} /></div>; }

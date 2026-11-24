@@ -12,3 +12,11 @@ Thumbs.db
 # Environment
 .env
 .env.*
+!.env.example
+
+# JavaScript build outputs
+node_modules/
+dist/
+playwright-report/
+test-results/
+coverage/

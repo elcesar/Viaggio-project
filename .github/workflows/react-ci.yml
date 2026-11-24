@@ -1,0 +1,23 @@
+name: React foundation CI
+on:
+  pull_request:
+    paths: ["apps/web/**", "package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "Dockerfile", "infrastructure/nginx/**", ".github/workflows/react-ci.yml"]
+  push:
+    branches: [feature/react-foundation]
+    paths: ["apps/web/**", "package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "Dockerfile", "infrastructure/nginx/**", ".github/workflows/react-ci.yml"]
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 10.12.4 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm test
+      - run: pnpm build
+      - run: pnpm --filter @viaggio/web exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+      - run: docker build -t viaggio-web:react-foundation .
