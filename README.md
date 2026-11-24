@@ -14,12 +14,33 @@ Este caso se utiliza para identificar, modelar y validar necesidades reales de o
 
 ## Etapa actual
 
-El producto se encuentra en una etapa inicial de definición y validación. La primera implementación será una demo estática en HTML/CSS/JavaScript destinada a visualizar la propuesta de producto y validar funcionalidades antes de definir la arquitectura definitiva.
+La demo estática en `demo/` se mantiene disponible como referencia comercial y rollback. La migración productiva comenzó en `apps/web/`, una aplicación React con Vite que incorpora el Home ficticio del apoderado y una base modular para los siguientes dominios. Esta rama no contiene backend, autenticación real, datos reales ni despliegue AWS.
 
 ## Estructura
 
-- `docs/`: documentación funcional, de datos y arquitectura del producto.
-- `demo/`: prototipo navegable de Viaggio.
+- `demo/`: prototipo navegable existente, preservado sin cambios.
+- `apps/web/`: aplicación React/Vite en migración.
+- `docs/`: documentación funcional, arquitectura, seguridad y migración.
+- `infrastructure/nginx/`: configuración de validación de SPA en contenedor.
+
+## Aplicación React
+
+Requisitos: Node 22 y pnpm 10.
+
+```bash
+pnpm install --frozen-lockfile
+pnpm dev
+pnpm lint
+pnpm test
+pnpm build
+pnpm test:e2e
+```
+
+El build se genera en `apps/web/dist/`. El `Dockerfile` valida la SPA detrás de Nginx con fallback de rutas. No publica ni ejecuta JSX en S3: Vite compila los assets antes de un futuro despliegue en S3 privado y CloudFront.
+
+## Próximos pasos
+
+El detalle de PR 01 y la hoja de ruta están en [docs/migration](docs/migration/PR01_SUMMARY.md). La arquitectura objetivo se documenta en [AWS target](docs/architecture/AWS_TARGET_ARCHITECTURE.md) y los límites de seguridad en [Security model](docs/security/SECURITY_MODEL.md).
 
 ## Base para el MVP
 
