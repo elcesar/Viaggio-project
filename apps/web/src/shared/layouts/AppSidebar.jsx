@@ -1,4 +1,4 @@
-import { Building2, CalendarDays, FileText, LayoutDashboard, Map, ReceiptText, UsersRound, Vote } from 'lucide-react';
+import { Building2, CalendarDays, FileText, Landmark, LayoutDashboard, Map, ReceiptText, UsersRound, Vote } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const navigation = [
@@ -6,6 +6,7 @@ const navigation = [
   ['/app/account', 'Mi cuenta', ReceiptText], ['/app/documents', 'Documentos', FileText],
   ['/app/events', 'Eventos', CalendarDays], ['/app/polls', 'Votaciones', Vote],
   ['/app/organization', 'Colegio y gira', Building2], ['/app/families', 'Familias', UsersRound],
+  ['/app/finance', 'Finanzas', Landmark],
 ];
 
 export function AppSidebar() {

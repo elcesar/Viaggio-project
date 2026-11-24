@@ -1,0 +1,5 @@
+import { BookOpenCheck } from 'lucide-react';
+import { Card } from '../../../shared/components/Card';
+import { formatClp } from '../../../shared/utils/currency';
+import { formatDate } from '../../../shared/utils/dates';
+export function LedgerTable({ entries }) { return <Card><h2 className="section-title"><BookOpenCheck size={19} /> Libro de movimientos</h2><p className="ledger-description">Cada movimiento conciliado se conserva. Una corrección futura debe crear una reversa, nunca editar ni eliminar el registro original.</p><div className="ledger-table" role="table"><div className="ledger-head" role="row"><span>Fecha</span><span>Concepto</span><span>Tipo</span><span>Monto</span></div>{entries.map((entry) => <div className="ledger-row" role="row" key={entry.id}><span>{formatDate(entry.occurredAt)}</span><span><b>{entry.description}</b><small>Clave: {entry.idempotencyKey}</small></span><span>{entry.type.replaceAll('_', ' ')}</span><span className={entry.amountClp >= 0 ? 'amount-positive' : 'amount-negative'}>{entry.amountClp >= 0 ? '+' : ''}{formatClp(entry.amountClp)}</span></div>)}</div></Card>; }
