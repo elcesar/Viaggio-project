@@ -1,5 +1,7 @@
 # Roadmap de Pull Requests
 
+El plan operativo, estados, criterios de revisión por César y gates de producción están en [`docs/operations/PRODUCTION_PR_RELEASE_PLAN.md`](../operations/PRODUCTION_PR_RELEASE_PLAN.md). Los PR 01-04 ya están abiertos; las filas siguientes de ese documento son propuestas, no cambios ya implementados.
+
 1. Fundación React, layout y Home.
 2. Gira, familias, estudiantes e importación CSV.
 3. Presupuesto, cuotas y libro financiero.
