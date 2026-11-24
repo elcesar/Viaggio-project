@@ -42,6 +42,10 @@ El build se genera en `apps/web/dist/`. El `Dockerfile` valida la SPA detrás de
 
 El detalle de PR 01 y la hoja de ruta están en [docs/migration](docs/migration/PR01_SUMMARY.md). La arquitectura objetivo se documenta en [AWS target](docs/architecture/AWS_TARGET_ARCHITECTURE.md) y los límites de seguridad en [Security model](docs/security/SECURITY_MODEL.md).
 
+## Preparación para producción
+
+La aplicación no está autorizada aún para manejar datos reales de familias, documentos ni fondos. El estado verificable, los bloqueos y la secuencia de salida están en [la evaluación de producción](docs/operations/PRODUCTION_READINESS.md). La rama contiene validaciones de calidad, secretos y dependencias; estas validaciones no sustituyen autenticación, autorización de servidor, operación AWS, respaldo ni revisión legal.
+
 ## Base para el MVP
 
 La definición ejecutable de la primera versión está en
